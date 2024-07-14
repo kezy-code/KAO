@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAO Download</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            const filename = 'KAO_Setup.exe'; // Nom du fichier à télécharger
+            const fileContent = 'Ceci est un exemple de contenu de fichier.'; // Contenu du fichier
+
+            // Crée un objet Blob avec le contenu du fichier
+            const blob = new Blob([fileContent], { type: 'text/plain' });
+
+            // Crée un lien de téléchargement
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+
+            // Déclenche le téléchargement
+            link.click();
+        };
+    </script>
+</body>
+</html>
